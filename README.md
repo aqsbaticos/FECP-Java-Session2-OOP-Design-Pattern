@@ -7,5 +7,24 @@ Developed by G13
 ### Brief Description of the Project
 
 ### Project Structure
+````
+.
+├── pom.xml
+├── README.md
+└── src
+    ├── main
+    │   ├── java
+    │   │   └── gbuy
+    │   │       ├── discount
+    │   │       │   ├── DiscountStrategy.java   # Interface: defines applyDiscount()
+    │   │       │   ├── PromoDiscount.java      # returns: 20% off amount
+    │   │       │   └── StudentDiscount.java    # returns: 50% off amount
+    │   │       │   └── NoDiscount.java         # returns: amount
+    │   │       ├── GBuy.class
+    │   │       └── GBuy.java
+    │   └── resources
+    └── test
+        └── java
+````
 
 ### Screenshot of Proof
