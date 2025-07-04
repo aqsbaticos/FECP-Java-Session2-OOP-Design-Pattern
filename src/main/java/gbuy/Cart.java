@@ -20,7 +20,7 @@ public class Cart {
     public void getProduct(int index) {
         if (index >= 0 && index < items.size()) {
             Product product = items.get(index);
-            System.out.println((index + 1) + ". " + product.getName() + " " + product.getPrice());
+            System.out.println((index + 1) + ". " + product.getProductName() + " " + product.getProductPrice());
         } else {
             System.out.println("Invalid index.");
         }
@@ -30,7 +30,7 @@ public class Cart {
         System.out.println("=== Cart ===");
         for (int i = 0; i < items.size(); i++) {
             Product product = items.get(i);
-            System.out.println((i + 1) + ". " + product.getName() + " " + product.getPrice());
+            System.out.println((i + 1) + ". " + product.getProductName() + " " + product.getProductPrice());
         }
     }
 
@@ -54,4 +54,7 @@ public class Cart {
             System.out.println("Invalid index.");
         }
     }
+}
+
+
 }
