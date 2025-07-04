@@ -13,7 +13,7 @@ public class Cart {
     }
 
     //  API
-    public void addProduct(Product product){
+    public void addProduct(Product product) {
         items.add(product);
     }
 
@@ -34,7 +34,7 @@ public class Cart {
         }
     }
 
-    public void removeProduct(int index){
+    public void removeProduct(int index) {
         if (index >= 0 && index < items.size()) {
             items.remove(index);
         } else {
@@ -42,7 +42,7 @@ public class Cart {
         }
     }
 
-    public void removeAllProducts(){
+    public void removeAllProducts() {
         items.clear();
         System.out.println("All items have been removed from the cart");
     }
@@ -54,4 +54,4 @@ public class Cart {
             System.out.println("Invalid index.");
         }
     }
-
+}
