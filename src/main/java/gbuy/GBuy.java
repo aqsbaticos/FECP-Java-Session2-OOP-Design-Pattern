@@ -1,6 +1,5 @@
 package gbuy;
 
-import gbuy.discount.DiscountStrategy;
 import gbuy.discount.PromoDiscount;
 import gbuy.discount.StudentDiscount;
 
