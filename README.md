@@ -5,6 +5,7 @@ Developed by G13
 - Choa, Christian Julien
 
 ### Brief Description of the Project
+**GBuy: A streamlined terminal-based E-commerce Checkout System**. GBuy offers a quick and efficient way for users to manage their purchases. Key features include easy **item addition to a shopping cart**, flexible **discount application** (supporting student and promotional codes), and **automatic total calculation**(subtotal + tax - discount) at checkout. Upon completion, a clear and concise **receipt** is instantly generated, providing a complete summary of the transaction. Ideal for fast-paced retail environments or simplified online ordering.
 
 ### Project Structure
 ```declarative
