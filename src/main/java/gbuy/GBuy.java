@@ -1,7 +1,7 @@
 package gbuy;
 
-import gbuy.discount.PromoDiscount;
-import gbuy.discount.StudentDiscount;
+import gbuy.discount.DiscountFactory;
+import gbuy.discount.DiscountStrategy;
 
 import java.util.Scanner;
 
@@ -97,7 +97,6 @@ public class GBuy {
 	}
 
 	static void applyDiscount() {
-
 		System.out.println("\n === Discount Types === \n" +
 				"1. Student \n" +
 				"2. Promo \n" +
@@ -105,23 +104,8 @@ public class GBuy {
 		System.out.print("Choose discount type: ");
 
 		String discountType = sc.next();
-		switch (discountType) {
-			case "1":
-				StudentDiscount student = new StudentDiscount();
-				cart.setDiscountStrategy(student);
-				break;
-			case "2":
-				PromoDiscount promo = new PromoDiscount();
-				cart.setDiscountStrategy(promo);
-				break;
-			case "3":
-				cart.setDiscountStrategy(null);
-				break;
-			default:
-				System.out.println("Invalid input. Please try again.");
-				break;
-		}
-
+		DiscountStrategy discount = new DiscountFactory().getDiscountStrategy(discountType);
+		cart.setDiscountStrategy(discount);
 		System.out.println(cart.getDiscountStrategy());
 	}
 }
