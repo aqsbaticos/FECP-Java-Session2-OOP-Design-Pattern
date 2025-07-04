@@ -3,8 +3,16 @@ package gbuy;
 import java.util.ArrayList;
 
 public class Cart {
-    private ArrayList<Product> items = new ArrayList<>();
 
+    //  VARIABLES
+    private ArrayList<Product> items;
+
+    //  CONSTRUCTOR
+    Cart() {
+        this.items = new ArrayList<>();
+    }
+
+    //  API
     public void addProduct(Product product){
         items.add(product);
     }
