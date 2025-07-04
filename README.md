@@ -10,6 +10,13 @@ Developed by G13
 ### Project Structure
 ```declarative
 .
+├── 0.png
+├── 1.1.png
+├── 1.2.png
+├── 2.1.png
+├── 2.2.png
+├── 3.png
+├── 4.png
 ├── pom.xml
 ├── README.md
 ├── src
@@ -19,6 +26,8 @@ Developed by G13
 │   │   │       ├── Cart.class
 │   │   │       ├── Cart.java
 │   │   │       ├── discount
+│   │   │       │   ├── DiscountFactory.class
+│   │   │       │   ├── DiscountFactory.java
 │   │   │       │   ├── DiscountStrategy.class
 │   │   │       │   ├── DiscountStrategy.java
 │   │   │       │   ├── PromoDiscount.class
@@ -33,28 +42,33 @@ Developed by G13
 │   └── test
 │       └── java
 │           └── gbuy
-│               └── discount
-│                   ├── PromoDiscountTest.java
-│                   └── StudentDiscountTest.java
+│               ├── CartTest.java
+│               ├── discount
+│               │   ├── PromoDiscountTest.java
+│               │   └── StudentDiscountTest.java
+│               └── ProductTest.java
 └── target
-    ├── classes
-    │   └── gbuy
-    │       ├── Cart.class
-    │       ├── discount
-    │       │   ├── DiscountStrategy.class
-    │       │   ├── PromoDiscount.class
-    │       │   └── StudentDiscount.class
-    │       ├── GBuy.class
-    │       └── Product.class
-    ├── generated-sources
-    │   └── annotations
-    ├── generated-test-sources
-    │   └── test-annotations
-    └── test-classes
-        └── gbuy
-            └── discount
-                ├── PromoDiscountTest.class
-                └── StudentDiscountTest.class
+├── classes
+│   └── gbuy
+│       ├── Cart.class
+│       ├── discount
+│       │   ├── DiscountFactory.class
+│       │   ├── DiscountStrategy.class
+│       │   ├── PromoDiscount.class
+│       │   └── StudentDiscount.class
+│       ├── GBuy.class
+│       └── Product.class
+├── generated-sources
+│   └── annotations
+├── generated-test-sources
+│   └── test-annotations
+└── test-classes
+└── gbuy
+├── CartTest.class
+├── discount
+│   ├── PromoDiscountTest.class
+│   └── StudentDiscountTest.class
+└── ProductTest.class
 ```
 
 ### Screenshot of Proof
