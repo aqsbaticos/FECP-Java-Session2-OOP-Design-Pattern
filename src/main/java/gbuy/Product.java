@@ -9,7 +9,10 @@ public class Product {
     //  CONSTRUCTOR
     public Product(String name, double price){
         this.productName = name;
-        this.productPrice = price;
+
+        if (price >= 0) this.productPrice = price;
+        else throw new IllegalArgumentException("Product price cannot be negative.");
+
     }
 
     //  GETTERS
@@ -22,6 +25,9 @@ public class Product {
 
     //  SETTERS
     public void setProductName(String productName) { this.productName = productName; }
-    public void setProductPrice(double productPrice) { this.productPrice = productPrice; }
+    public void setProductPrice(double productPrice) {
+        if (productPrice >= 0) this.productPrice = productPrice;
+        else throw new IllegalArgumentException("Product price cannot be negative.");
+    }
 }
 

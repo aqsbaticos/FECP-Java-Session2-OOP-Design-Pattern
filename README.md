@@ -7,5 +7,52 @@ Developed by G13
 ### Brief Description of the Project
 
 ### Project Structure
-
+```declarative
+.
+├── pom.xml
+├── README.md
+├── src
+│   ├── main
+│   │   ├── java
+│   │   │   └── gbuy
+│   │   │       ├── Cart.class
+│   │   │       ├── Cart.java
+│   │   │       ├── discount
+│   │   │       │   ├── DiscountStrategy.class
+│   │   │       │   ├── DiscountStrategy.java
+│   │   │       │   ├── PromoDiscount.class
+│   │   │       │   ├── PromoDiscount.java
+│   │   │       │   ├── StudentDiscount.class
+│   │   │       │   └── StudentDiscount.java
+│   │   │       ├── GBuy.class
+│   │   │       ├── GBuy.java
+│   │   │       ├── Product.class
+│   │   │       └── Product.java
+│   │   └── resources
+│   └── test
+│       └── java
+│           └── gbuy
+│               └── discount
+│                   ├── PromoDiscountTest.java
+│                   └── StudentDiscountTest.java
+└── target
+    ├── classes
+    │   └── gbuy
+    │       ├── Cart.class
+    │       ├── discount
+    │       │   ├── DiscountStrategy.class
+    │       │   ├── PromoDiscount.class
+    │       │   └── StudentDiscount.class
+    │       ├── GBuy.class
+    │       └── Product.class
+    ├── generated-sources
+    │   └── annotations
+    ├── generated-test-sources
+    │   └── test-annotations
+    └── test-classes
+        └── gbuy
+            └── discount
+                ├── PromoDiscountTest.class
+                └── StudentDiscountTest.class
+```
 ### Screenshot of Proof
