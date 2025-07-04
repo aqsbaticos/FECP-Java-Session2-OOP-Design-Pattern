@@ -10,47 +10,46 @@ public class GBuy {
 	//	CLASS VARIABLES
 	public static Cart cart = new Cart();
 	public static final Scanner sc = new Scanner(System.in);
-	public static int choice;
 
 	public static void main(String[] args) {
 
-		boolean running = true;
+		String choice; boolean running = true;
 		while (running){
-			displayMenu();
+			choice = displayMenu();
 			switch (choice){
-				case 1:
+				case "1":
 					addToCart();
 					break;
-				case 2:
+				case "2":
 					viewCart();
 					break;
-				case 3:
+				case "3":
 					//computeDiscount();
 					break;
-				case 4:
+				case "4":
 					checkout();
 					break;
-				case 5:
+				case "0":
 					System.out.println("Thank you for shopping with GBuy!");
 					running = false;
 					break;
 				default:
 					System.out.println("Invalid output. Please try again.");
-					displayMenu();
+					break;
 			}
 		}
 	}
 
-	public static void displayMenu(){
+	public static String displayMenu(){
 		System.out.println("\n" +
 				"=== Welcome to GBuy! What do you want to do today? === \n\n" +
 				"1. Add product to cart \n" +
 				"2. View cart \n" +
 				"3. Apply discount \n" +
 				"4. Checkout \n" +
-				"5. Exit \n");
+				"0. Exit \n");
 		System.out.print("Enter choice: ");
-		choice = sc.nextInt();
+		return sc.next();
 	}
 
 	public static void addToCart(){
