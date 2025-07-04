@@ -1,5 +1,5 @@
 package gbuy.discount;
 
-interface DiscountStrategy {
+public interface DiscountStrategy {
 	double applyDiscount(double amount);
 }
