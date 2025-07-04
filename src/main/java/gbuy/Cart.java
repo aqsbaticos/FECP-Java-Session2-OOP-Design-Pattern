@@ -2,18 +2,18 @@ package gbuy;
 
 import java.util.ArrayList;
 
-//    ArrayList<Product> items;
-//    addProduct(Product product);
-//    getProduct();
-//    getAllProducts();
-//    removeProduct();
-//    remoteAllProducts()
-//    updateProduct();
-
 public class Cart {
-    private ArrayList<Product> items = new ArrayList<>();
 
-    public void addProduct(Product product){
+    //  VARIABLES
+    private ArrayList<Product> items;
+
+    //  CONSTRUCTOR
+    Cart() {
+        this.items = new ArrayList<>();
+    }
+
+    //  API
+    public void addProduct(Product product) {
         items.add(product);
     }
 
@@ -34,7 +34,7 @@ public class Cart {
         }
     }
 
-    public void removeProduct(int index){
+    public void removeProduct(int index) {
         if (index >= 0 && index < items.size()) {
             items.remove(index);
         } else {
@@ -42,7 +42,7 @@ public class Cart {
         }
     }
 
-    public void removeAllProducts(){
+    public void removeAllProducts() {
         items.clear();
         System.out.println("All items have been removed from the cart");
     }
@@ -56,3 +56,5 @@ public class Cart {
     }
 }
 
+
+}
