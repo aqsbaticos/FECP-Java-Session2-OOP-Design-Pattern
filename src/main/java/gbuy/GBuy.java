@@ -53,10 +53,11 @@ public class GBuy {
 	}
 
 	public static void addToCart(){
+
 		System.out.print("Enter product name: ");
-		String prodName = sc.next();
+			String prodName = sc.next();
 		System.out.print("Enter product price: ");
-		double prodPrice = sc.nextDouble();
+			double prodPrice = sc.nextDouble();						// this will throw err;
 		Product productToAdd = new Product(prodName,prodPrice);
 		cart.addProduct(productToAdd);
 
