@@ -85,4 +85,16 @@ class CartTest {
         cart.removeProduct(5);
         assertEquals("Invalid index.\n", outputStream.toString());
     }
+    @Test
+    void shouldRemoveAllProducts() {
+        cart.addProduct(product1);
+        cart.addProduct(product2);
+
+        cart.removeAllProducts();
+        assertEquals("All items have been removed from the cart.\n", outputStream.toString());
+
+        outputStream.reset();
+        cart.getAllProducts();
+        assertTrue(outputStream.toString().contains("Your cart is empty."));
+    }
 }
