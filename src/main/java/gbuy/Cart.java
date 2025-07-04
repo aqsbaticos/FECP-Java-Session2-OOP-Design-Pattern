@@ -1,15 +1,18 @@
 package gbuy;
 
 import java.util.ArrayList;
+import gbuy.discount.DiscountStrategy;
 
 public class Cart {
 
     //  VARIABLES
     private ArrayList<Product> items;
+    private DiscountStrategy discountStrategy;
 
     //  CONSTRUCTOR
     Cart() {
         this.items = new ArrayList<>();
+        this.discountStrategy = null;
     }
 
     //  API
@@ -53,5 +56,13 @@ public class Cart {
         } else {
             System.out.println("Invalid index.");
         }
+    }
+
+    //  GETTERS
+    public DiscountStrategy getDiscountStrategy() { return this.discountStrategy; }
+
+    //  SETTERS
+    public void setDiscountStrategy(DiscountStrategy discountStrategy) {
+        this.discountStrategy = discountStrategy;
     }
 }
