@@ -9,8 +9,8 @@ import java.util.Scanner;
 public class GBuy {
 
 	//	CLASS VARIABLES
-	public static Cart cart = new Cart();
-	public static final Scanner sc = new Scanner(System.in);
+	private static Cart cart = new Cart();
+	private static final Scanner sc = new Scanner(System.in);
 
 	public static void main(String[] args) {
 
@@ -42,7 +42,7 @@ public class GBuy {
 		}
 	}
 
-	public static String displayMenu() {
+	static String displayMenu() {
 		System.out.println("\n" +
 				"=== Welcome to GBuy! What do you want to do today? === \n\n" +
 				"1. Add product to cart \n" +
@@ -54,7 +54,7 @@ public class GBuy {
 		return sc.next();
 	}
 
-	public static void addToCart() {
+	static void addToCart() {
 
 		System.out.print("Enter product name: ");
 		String prodName = sc.next();
@@ -66,19 +66,38 @@ public class GBuy {
 		System.out.println("Product successfully added to cart!");
 	}
 
-	public static void viewCart() {
+	static void viewCart() {
 		cart.getAllProducts();
 	}
 
 	public static void checkout() {
-		computeTax();
+		double subTotal = cart.getTotalPrice();
+		double tax = computeTax(subTotal);
+		double discount = computeDiscount(subTotal);
+		double total = subTotal+tax-discount;
+
+		System.out.println();
+		System.out.println("=== CHECK OUT ===");
+		System.out.printf("Sub-Total: %f\n", subTotal);
+		System.out.printf("Tax: +%f\n", tax);
+		System.out.printf("Discount: -%f\n", discount);
+		System.out.printf("TOTAL: %f\n", total);
+		cart.removeAllProducts();
+		System.out.println("Thank you for shopping!");
+	}
+	static double computeTax(double subTotal) {
+		return subTotal * 0.12;
+	}
+	static double computeDiscount(double subTotal) {
+		try {
+			return cart.getDiscountStrategy().applyDiscount(subTotal);
+		} catch (NullPointerException e) {
+			System.out.println("No discount applied.");
+			return 0;
+		}
 	}
 
-	public static void computeTax() {
-		// * 0.12
-	}
-
-	public static void applyDiscount() {
+	static void applyDiscount() {
 
 		System.out.println("\n === Discount Types === \n" +
 				"1. Student \n" +

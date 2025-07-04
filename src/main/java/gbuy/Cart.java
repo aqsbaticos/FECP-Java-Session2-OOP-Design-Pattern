@@ -31,10 +31,19 @@ public class Cart {
 
     public void getAllProducts() {
         System.out.println("=== Cart ===");
+        if (items.isEmpty()) System.out.println("Your cart is empty.");
         for (int i = 0; i < items.size(); i++) {
             Product product = items.get(i);
             System.out.println((i + 1) + ". " + product.getProductName() + " " + product.getProductPrice());
         }
+    }
+
+    public double getTotalPrice() {
+        double totalPrice = 0;
+        for (Product product: items) {
+			totalPrice = totalPrice + product.getProductPrice();
+        }
+        return totalPrice;
     }
 
     public void removeProduct(int index) {
@@ -47,7 +56,7 @@ public class Cart {
 
     public void removeAllProducts() {
         items.clear();
-        System.out.println("All items have been removed from the cart");
+        System.out.println("All items have been removed from the cart.");
     }
 
     public void updateProduct(int index, Product newProduct) {

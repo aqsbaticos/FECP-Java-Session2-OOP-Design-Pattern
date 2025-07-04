@@ -4,6 +4,6 @@ public class PromoDiscount implements DiscountStrategy {
 
 	@Override
 	public double applyDiscount(double amount) {
-		return amount-(amount*0.5);
+		return amount*0.5;
 	}
 }
