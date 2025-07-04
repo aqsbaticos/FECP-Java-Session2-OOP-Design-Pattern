@@ -56,4 +56,11 @@ class CartTest {
         cart.getProduct(0);
         assertEquals("1. Toothbrush 100.0\n", outputStream.toString());
     }
+    @Test
+    void shouldBeInvalidWhenFetchingInvalidIndex() {
+        cart.addProduct(product1);
+
+        cart.getProduct(5);
+        assertEquals("Invalid index.\n", outputStream.toString());
+    }
 }
