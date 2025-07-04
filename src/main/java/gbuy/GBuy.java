@@ -6,12 +6,15 @@ import gbuy.discount.StudentDiscount;
 import java.util.Scanner;
 
 public class GBuy {
+
+	//	CLASS VARIABLES
 	public static Cart cart = new Cart();
 	public static final Scanner sc = new Scanner(System.in);
 	public static int choice;
-	public static boolean running = true;
 
 	public static void main(String[] args) {
+
+		boolean running = true;
 		while (running){
 			displayMenu();
 			switch (choice){
