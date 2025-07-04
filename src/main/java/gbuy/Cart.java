@@ -2,14 +2,6 @@ package gbuy;
 
 import java.util.ArrayList;
 
-//    ArrayList<Product> items;
-//    addProduct(Product product);
-//    getProduct();
-//    getAllProducts();
-//    removeProduct();
-//    remoteAllProducts()
-//    updateProduct();
-
 public class Cart {
     private ArrayList<Product> items = new ArrayList<>();
 
