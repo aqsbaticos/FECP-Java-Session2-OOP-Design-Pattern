@@ -63,4 +63,26 @@ class CartTest {
         cart.getProduct(5);
         assertEquals("Invalid index.\n", outputStream.toString());
     }
+    @Test
+    void shouldRemoveProductFromCart() {
+        cart.addProduct(product1);
+        cart.addProduct(product2);
+
+        cart.removeProduct(0);
+
+        outputStream.reset();
+        cart.getAllProducts();
+
+        String expectedOutput = "=== Cart ===\n" +
+                "1. Toothpaste 200.0\n";
+
+        assertEquals(expectedOutput, outputStream.toString());
+    }
+    @Test
+    void shouldBeInvalidWhenRemovingProductWithInvalidIndex() {
+        cart.addProduct(product1);
+
+        cart.removeProduct(5);
+        assertEquals("Invalid index.\n", outputStream.toString());
+    }
 }
