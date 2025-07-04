@@ -6,6 +6,7 @@ import gbuy.discount.StudentDiscount;
 import java.util.Scanner;
 
 public class GBuy {
+	public static Cart cart = new Cart();
 	public static final Scanner sc = new Scanner(System.in);
 	public static int choice;
 	public static boolean running = true;
@@ -15,28 +16,24 @@ public class GBuy {
 			displayMenu();
 			switch (choice){
 				case 1:
-					//Cart.addProduct
+					addToCart();
 					break;
 				case 2:
-					//Cart.displayProduct
+					viewCart();
 					break;
 				case 3:
-					computeDiscount();
+					//computeDiscount();
 					break;
 				case 4:
 					checkout();
 					break;
 				case 5:
 					System.out.println("Thank you for shopping with GBuy!");
+					running = false;
 					break;
 				default:
 					System.out.println("Invalid output. Please try again.");
-			}
-			System.out.println("Would you like to return to the menu?");
-			String ans = sc.next().toLowerCase();
-			if (!ans.equals("yes")) {
-				System.out.println("Thank you! Bye!");
-				running = false;
+					displayMenu();
 			}
 		}
 	}
@@ -53,6 +50,21 @@ public class GBuy {
 		choice = sc.nextInt();
 	}
 
+	public static void addToCart(){
+		System.out.print("Enter product name: ");
+		String prodName = sc.next();
+		System.out.print("Enter product price: ");
+		double prodPrice = sc.nextDouble();
+		Product productToAdd = new Product(prodName,prodPrice);
+		cart.addProduct(productToAdd);
+
+		System.out.println("Product successfully added to cart!");
+	}
+
+	public static void viewCart(){
+		cart.getAllProducts();
+	}
+
 	public static void checkout(){
 		computeTax();
 	}
@@ -61,36 +73,35 @@ public class GBuy {
 		// * 0.12
 	}
 
-	public static void computeDiscount(){
-		//Discount
-		System.out.println("\n === Discount Types === \n" +
-				"1. Student \n" +
-				"2. Promo \n" +
-				"3. None \n");
-		System.out.print("Choose discount type: ");
-		int discountType = sc.nextInt();
-		switch (discountType){
-			case 1:
-				//Discount.student
-				StudentDiscount student = new StudentDiscount();
-				double price = 100.00;
-				double studentDiscount = student.applyDiscount(price);
-				System.out.println("Discount: " + studentDiscount);
-				break;
-			case 2:
-				//Discount.promo
-				PromoDiscount promo = new PromoDiscount();
-				double amount = 90.00;
-				double promoDiscount = promo.applyDiscount(amount);
-				System.out.println("Discount: " + promoDiscount);
-				break;
-			case 3:
-				//no discount
-				break;
-			default:
-				System.out.println("Invalid output. Please try again.");
-				break;
-		}
+//	public static void computeDiscount(){
+//		//Discount
+//		System.out.println("\n === Discount Types === \n" +
+//				"1. Student \n" +
+//				"2. Promo \n" +
+//				"3. None \n");
+//		System.out.print("Choose discount type: ");
+//		int discountType = sc.nextInt();
+//		switch (discountType){
+//			case 1:
+//				//Discount.student
+//				StudentDiscount student = new StudentDiscount();
+//				//cart.getProduct();
+//				double price =
+//				//double studentDiscount = student.applyDiscount(price);
+//				System.out.println("Discount: " + studentDiscount);
+//				break;
+//			case 2:
+//				//Discount.promo
+//				PromoDiscount promo = new PromoDiscount();
+//				double amount = 90.00;
+//				double promoDiscount = promo.applyDiscount(amount);
+//				System.out.println("Discount: " + promoDiscount);
+//				break;
+//			case 3:
+//				//no discount
+//				break;
+//			default:
+//				System.out.println("Invalid output. Please try again.");
+//				break;
+//		}
 	}
-
-}
