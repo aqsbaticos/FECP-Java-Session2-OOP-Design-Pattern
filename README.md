@@ -56,4 +56,19 @@ Developed by G13
                 ├── PromoDiscountTest.class
                 └── StudentDiscountTest.class
 ```
+
 ### Screenshot of Proof
+#### Adding Product to Cart
+![Adding Product to Cart](1.1.png)
+#### Viewing the Added Product to Cart
+![Viewing the Added Product to Cart](2.1.png)
+#### Adding Another Product to Cart
+![Adding Another Product to Cart](1.2.png)
+#### Viewing Products
+![Viewing Products](2.2.png)
+#### Applying Discount
+![Applying Discount](3.png)
+#### Checking Out
+![Checking Out](4.png)
+#### Exiting the System
+![Exiting the System](0.png)
